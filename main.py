@@ -22,6 +22,16 @@ def courses():
 def registration():
     return render_template('registration.html')
 
+@app.route("/forgot")
+def forgotPassword():
+    return render_template('forgotpassword.html')
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
+
+
 
 
 app.run(debug = True)
