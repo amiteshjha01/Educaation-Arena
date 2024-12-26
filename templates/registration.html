@@ -9,10 +9,10 @@
         /* Add your form styles here */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #b7d3e3;
             margin: 0;
             padding: 0;
-            background-image:url("/static/images/sg.jpg");
+            background-image:url("/static/images/sg,jpg");
             background-size: 1525px 800px;
 
         }
@@ -40,7 +40,7 @@
             color: white;
             border: none;
             cursor: pointer;
-            width: 100%;
+            width: 95%;
         }
         .form-container input[type="submit"]:hover {
             background-color: #46b8da;
@@ -50,7 +50,7 @@
 <body>
     <div class="form-container">
         <h2>Sign Up</h2>
-        <form action="/registration" method="POST">
+        <form action="/register" method="POST">
             <img src="/static/images/sg.jpg" alt="">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Email" required>
