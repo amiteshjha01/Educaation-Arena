@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+    padding-top: 76px;
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/static/images/background.jpg') no-repeat center center/cover;
+    padding: 100px 0;
+    margin-top: -76px;
+    color: white;
+}
+
+.form-container{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #4f46e5;
+
+}
+
+/* Feature Icons */
+.bi {
+    color: #4f46e5;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.btn-primary:hover {
+    background-color: #3730a3;
+    border-color: #3730a3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+}
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: green; /* Adjust the color as needed */
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
