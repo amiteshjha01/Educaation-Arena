@@ -3,99 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Educaation Arena</title>
+    <title>Courses - Education Arena</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-3">
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-4">
         <h1>Our Courses</h1>
-        <p>Explore our variety of engaging and comprehensive courses!</p>
+        <p>Choose from a wide range of expertly designed courses to boost your skills and knowledge!</p>
     </header>
-    <main class="container my-4">
+
+    <!-- Main Content -->
+    <main class="container my-5">
         <div class="row">
             <!-- Course Card 1 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="/static/images/python_course.jpg" class="card-img-top" alt="Python Course">
                     <div class="card-body">
                         <h5 class="card-title">Python for Beginners</h5>
-                        <p class="card-text">Learn Python from scratch with hands-on projects and clear explanations.</p>
+                        <p class="card-text">Learn Python programming from scratch. Perfect for beginners, with hands-on examples and projects.</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Python for Beginners', 'https://youtube.com/playlist?list=PLoM2WZfiCNHVAhxwVmnyQ2ST4jphzz5Tw&si=NDqeRJmulgf_vrZ-')">Enroll Now</button>
+                            <button class="btn btn-primary" onclick="enrollCourse('Python for Beginners')">Enroll Now</button>
                             <span class="price">Rs 999</span>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Course Card 2 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="/static/images/datascience_course.jpg" class="card-img-top" alt="Data Science Course">
                     <div class="card-body">
                         <h5 class="card-title">Data Science Masterclass</h5>
-                        <p class="card-text">Dive into data analysis, visualization, and machine learning techniques.</p>
+                        <p class="card-text">Become a data expert with real-world examples of analysis, visualization, and machine learning techniques.</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Data Science Masterclass', 'https://youtube.com/playlist?list=PLoM2WZfiCNHWkG_Xen2HfoiD5kOEGW3M4&si=3N3QHz9wU1Mlzo0K')">Enroll Now</button>
+                            <button class="btn btn-primary" onclick="enrollCourse('Data Science Masterclass')">Enroll Now</button>
                             <span class="price">Free</span>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Course Card 3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="/static/images/webdev_course.png" class="card-img-top" alt="Web Development Course">
                     <div class="card-body">
                         <h5 class="card-title">Web Development Bootcamp</h5>
-                        <p class="card-text">Master HTML, CSS, Bootstrap, Django / Flask, and build responsive web applications.</p>
+                        <p class="card-text">Gain expertise in building responsive web apps using HTML, CSS, JavaScript, and Flask/Django.</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Web Development Bootcamp', '#')">Enroll Now</button>
+                            <button class="btn btn-primary" onclick="enrollCourse('Web Development Bootcamp')">Enroll Now</button>
                             <span class="price">Rs 1499</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/static/images/ml_course.jpg" class="card-img-top" alt="Machine Learning Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Machine Learning Basics</h5>
+                        <p class="card-text">Master the fundamentals of Machine Learning with algorithms and practical use cases.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-primary" onclick="enrollCourse('Machine Learning Basics')">Enroll Now</button>
+                            <span class="price">Rs 1999</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/static/images/ai_course.jpg" class="card-img-top" alt="AI Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Artificial Intelligence Essentials</h5>
+                        <p class="card-text">Dive into AI concepts, tools, and practical examples. No prior knowledge required.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-primary" onclick="enrollCourse('Artificial Intelligence Essentials')">Enroll Now</button>
+                            <span class="price">Rs 2499</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Educaation Arena. All rights reserved.</p>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2025 Education Arena. Empowering Learning for Everyone.</p>
+        <a href="/contact" class="text-white">Contact Us</a> |
+        <a href="/about" class="text-white">About Us</a>
     </footer>
 
-    <!-- Enrollment Message Modal -->
-    <div class="modal fade" id="enrollmentModal" tabindex="-1" aria-labelledby="enrollmentModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="enrollmentModalLabel">Enrollment Successful</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    You have successfully enrolled in <span id="courseName"></span>.
-                </div>
-                <div class="modal-footer">
-                    <a id="courseLink" href="#" class="btn btn-primary">Go to Course</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- JavaScript -->
     <script>
-        function enrollCourse(courseName, courseLink) {
-            // Set the course name and link in the modal
-            document.getElementById('courseName').textContent = courseName;
-            document.getElementById('courseLink').href = courseLink;
-
-            // Show the modal
-            var myModal = new bootstrap.Modal(document.getElementById('enrollmentModal'));
-            myModal.show();
-
-            // Redirect to the course link after 3 seconds
-            setTimeout(function() {
-                window.location.href = courseLink;
-            }, 3000);
+        function enrollCourse(courseName) {
+            fetch('/enroll', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ course: courseName })
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/profile';
+                } else {
+                    alert('Please log in to enroll in a course.');
+                    window.location.href = '/login';
+                }
+            });
         }
     </script>
 </body>
