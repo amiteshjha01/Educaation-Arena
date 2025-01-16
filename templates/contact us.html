@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Contact Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Educaation Arena</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
-<body bgcolor="green">
-        <h1> " THis is the contact page of our project, we want to contact us for further information </h1>
+
+<body>
+    <header class="text-center py-5 bg-light">
+        <section class="mt-5">
+            <h2>Get In touch With Us</h2>
+            <p><b><b>Email:</b> info.educaationarena@gmail.com </p>
+            <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/amitesh-jha-a2b932215" target="_blank">Let's Connect</a></p>
+        </section>
+    </header>
+
+
+
+    <main class="container my-5">
+        <form action="/send_message" method="POST" class="p-4 border rounded">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+
+    </main>
+
+    <footer class="text-center py-4 bg-light">
+        <p class="mb-0">© 2025 Educaation Arena. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
