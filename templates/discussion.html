@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header.hero-section {
+            background-color: #007BFF;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header.hero-section h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header.hero-section p {
+            font-size: 1.2em;
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .form-container {
+            margin-bottom: 30px;
+        }
+
+        .form-container h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul li a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <h1>Discussion Forum</h1>
+        <p>Connect and collaborate with other learners.</p>
+    </header>
+    <main>
+        <section class="form-container">
+            <h2>Post a New Question</h2>
+            <form action="/post_question" method="post">
+                <textarea name="question" rows="4" placeholder="Type your question here..." required></textarea>
+                <button class="btn-primary" type="submit">Post</button>
+            </form>
+        </section>
+        <section>
+            <h2>Recent Discussions</h2>
+            <ul>
+                <li>Question 1: <a href="/discussion1">View Discussion</a></li>
+                <li>Question 2: <a href="/discussion2">View Discussion</a></li>
+                <!-- Add dynamic content here -->
+                {% for discussion in discussions %}
+                <li>{{ discussion.title }}: <a href="/discussion/{{ discussion.id }}">View Discussion</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header styles */
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        section h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        ul li a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <h1>Admin Panel</h1>
+        <p>Welcome, Admin! Manage platform activities and analytics.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Manage Users</h2>
+            <ul>
+                <li><a href="/manage_users">View All Users</a></li>
+                <li><a href="/add_user">Add New User</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Manage Courses</h2>
+            <ul>
+                <li><a href="/manage_courses">View All Courses</a></li>
+                <li><a href="/add_course">Add New Course</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Platform Analytics</h2>
+            <p>Coming soon: A detailed analytics dashboard for platform insights.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Education Arena. All rights reserved.</p>
+    </footer>
+</body>
+</html>

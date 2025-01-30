@@ -4,82 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Add your form styles here */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #b7d3e3;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            background-image: url("/static/images/lg.jpg");
+            background-image: url("/static/images/lg.jpg"); /* Keep your background image */
             background-size: cover;
             background-position: center;
         }
+
         .form-container {
-            background-color: rgba(231, 241, 196, 0.8);
-            padding: 20px;
-            max-width: 400px;
-            margin: 50px auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            position: relative; /* Position relative for z-index */
+            z-index: 1; /* Bring form container above the blurred background */
+            transition: transform 0.3s ease; /* Smooth scaling effect */
         }
-        .form-container h2 {
-            margin-bottom: 15px;
+
+        .form-container:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+
+        h2 {
             text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+            position: relative; /* For pseudo-element */
         }
-        .form-container img {
+
+        h2::after {
+            content: '';
             display: block;
-            margin: 0 auto 15px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
+            width: 50px;
+            height: 4px;
+            background: #007bff;
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        .form-container input {
-            width: 95%;
-            padding: 10px;
-            margin: 10px 0;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s; /* Smooth border color transition */
         }
-        .form-container input[type="submit"] {
-            background-color: #5bc0de;
-            color: white;
+
+        input:focus {
+            border-color: #007bff; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
-            width: 95%;
+            width: 100%;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
         }
-        .form-container input[type="submit"]:hover {
-            background-color: #46b8da;
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect */
         }
+
         .forgot-password {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
+            color: #666;
         }
+
         .forgot-password a {
-            color: #5bc0de;
+            color: #007bff;
             text-decoration: none;
+            font-weight: 600;
         }
+
         .forgot-password a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .form-container {
+                width: 90%; /* Make form responsive on small screens */
+            }
         }
     </style>
 </head>
 <body>
-<div class="form-container">
-    <h2>Login</h2>
-    <form action="/login" method="POST">
-        <img src="/static/images/lg.jpg" alt="Login Illustration">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-        <button type="submit">Login</button>
-    </form>
-    <div class="forgot-password">
-        <a href="/forgot">Forgot Password?</a>
+            <button type="submit">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="/forgot">Forgot Password?</a>
+        </div>
     </div>
-</div>
 </body>
 </html>

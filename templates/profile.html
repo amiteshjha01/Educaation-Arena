@@ -25,6 +25,8 @@
 
         h1, h2, h3 {
             color: #007BFF;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         p {
@@ -49,6 +51,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
 
         .btn:hover {
@@ -92,6 +95,7 @@
         .no-data {
             font-style: italic;
             color: #888;
+            text-align: center;
         }
 
         form {
@@ -103,6 +107,41 @@
         form button {
             margin-top: 10px;
         }
+
+        /* New styles for better layout */
+        .profile-info {
+            background-color: #e9f7fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+        }
+
+        .course-section {
+            margin-top: 30px;
+        }
+
+        .course-section h3 {
+            margin-top: 20px;
+        }
+
+        .course-section ul {
+            padding: 0;
+        }
+
+        .course-section li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -111,7 +150,7 @@
         <h1>Welcome, {{ user['name'] }}</h1>
 
         <!-- User Information Section -->
-        <div style="margin: 20px 0;">
+        <div class="profile-info">
             <p><b>Email:</b> {{ user['email'] }}</p>
             <p><b>Date of Birth:</b> {{ user.get('dob', 'Not provided') }}</p>
             <p><b>Contact:</b> {{ user.get('contact', 'Not provided') }}</p>
@@ -131,34 +170,45 @@
             <button type="submit" class="btn">Update Profile</button>
         </form>
 
+        <br>
+        <a class="nav-link" href="/quiz">Go to the Quiz</a>
+        <br>
+
         <!-- Enrolled Courses Section -->
-        <h3>Your Enrolled Courses</h3>
-        {% if enrolled_courses %}
-        <ul class="list-group">
-            {% for course in enrolled_courses %}
-            <li class="list-group-item">{{ course }}</li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p class="no-data">You haven't enrolled in any courses yet.</p>
-        {% endif %}
+        <div class="course-section">
+            <h3>Your Enrolled Courses</h3>
+            {% if enrolled_courses %}
+            <ul class="list-group">
+                {% for course in enrolled_courses %}
+                <li class="list-group-item">{{ course }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="no-data">You haven't enrolled in any courses yet.</p>
+            <br>
+            <a href="/courses" class="btn">Go to Courses</a>
+            <br>
+            {% endif %}
+        </div>
 
         <!-- Available Courses Section -->
-        <h3>Available Courses</h3>
-        {% if all_courses %}
-        <ul class="list-group">
-            {% for course in all_courses %}
-            <li class="list-group-item">
-                {{ course['name'] }}
-                <form action="/enroll/{{ course['_id'] }}" method="POST" style="margin-left: 20px;">
-                    <button type="submit" class="btn btn-sm">Enroll</button>
-                </form>
-            </li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p class="no-data">No courses available at the moment.</p>
-        {% endif %}
+        <div class="course-section">
+            <h3>Available Courses</h3>
+            {% if all_courses %}
+            <ul class="list-group">
+                {% for course in all_courses %}
+                <li class="list-group-item">
+                    {{ course['name'] }}
+                    <form action="/enroll/{{ course['_id'] }}" method="POST">
+                        <button type="submit" class="btn btn-sm">Enroll</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="no-data">No courses available at the moment.</p>
+            {% endif %}
+        </div>
 
         <!-- Logout Link -->
         <a href="/logout" class="logout-link">Logout</a>

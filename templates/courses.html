@@ -8,101 +8,130 @@
     <link href="/static/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="bg-primary text-white text-center py-4">
-        <h1>Our Courses</h1>
-        <p>Choose from a wide range of expertly designed courses to boost your skills and knowledge!</p>
-    </header>
+<!-- Header Section -->
+<header class="bg-primary text-white text-center py-4">
+    <h1>Our Courses</h1>
+    <p>Choose from a wide range of expertly designed courses to boost your skills and knowledge!</p>
+</header>
 
-    <!-- Main Content -->
-    <main class="container my-5">
-        <div class="row">
-            <!-- Course Card 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="/static/images/python_course.jpg" class="card-img-top" alt="Python Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Python for Beginners</h5>
-                        <p class="card-text">Learn Python programming from scratch. Perfect for beginners, with hands-on examples and projects.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Python for Beginners')">Enroll Now</button>
-                            <span class="price">Rs 999</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="/static/images/datascience_course.jpg" class="card-img-top" alt="Data Science Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Science Masterclass</h5>
-                        <p class="card-text">Become a data expert with real-world examples of analysis, visualization, and machine learning techniques.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Data Science Masterclass')">Enroll Now</button>
-                            <span class="price">Free</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="/static/images/webdev_course.png" class="card-img-top" alt="Web Development Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Web Development Bootcamp</h5>
-                        <p class="card-text">Gain expertise in building responsive web apps using HTML, CSS, JavaScript, and Flask/Django.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Web Development Bootcamp')">Enroll Now</button>
-                            <span class="price">Rs 1499</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="/static/images/ml_course.jpg" class="card-img-top" alt="Machine Learning Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Machine Learning Basics</h5>
-                        <p class="card-text">Master the fundamentals of Machine Learning with algorithms and practical use cases.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Machine Learning Basics')">Enroll Now</button>
-                            <span class="price">Rs 1999</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 5 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="/static/images/ai_course.jpg" class="card-img-top" alt="AI Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Artificial Intelligence Essentials</h5>
-                        <p class="card-text">Dive into AI concepts, tools, and practical examples. No prior knowledge required.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary" onclick="enrollCourse('Artificial Intelligence Essentials')">Enroll Now</button>
-                            <span class="price">Rs 2499</span>
-                        </div>
+<!-- Main Content -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Course Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/static/images/python_course.jpg" class="card-img-top" alt="Python Course">
+                <div class="card-body">
+                    <h5 class="card-title">Python for Beginners</h5>
+                    <p class="card-text">Learn Python programming from scratch. Perfect for beginners, with hands-on
+                        examples and projects.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary" onclick="enrollCourse('Python for Beginners')">Enroll Now
+                        </button>
+                        <span class="price">Rs 999</span>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white text-center py-4">
-        <p>&copy; 2025 Education Arena. Empowering Learning for Everyone.</p>
-        <a href="/contact" class="text-white">Contact Us</a> |
-        <a href="/about" class="text-white">About Us</a>
-    </footer>
+        <!-- Course Card 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/static/images/datascience_course.jpg" class="card-img-top" alt="Data Science Course">
+                <div class="card-body">
+                    <h5 class="card-title">Data Science Masterclass</h5>
+                    <p class="card-text">Become a data expert with real-world examples of analysis, visualization, and
+                        machine learning techniques.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary" onclick="enrollCourse('Data Science Masterclass')">Enroll Now
+                        </button>
+                        <span class="price">Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- JavaScript -->
-    <script>
+        <!-- Course Card 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/static/images/webdev_course.png" class="card-img-top" alt="Web Development Course">
+                <div class="card-body">
+                    <h5 class="card-title">Web Development Bootcamp</h5>
+                    <p class="card-text">Gain expertise in building responsive web apps using HTML, CSS, JavaScript, and
+                        Flask/Django.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary" onclick="enrollCourse('Web Development Bootcamp')">Enroll Now
+                        </button>
+                        <span class="price">Rs 1499</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Card 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/static/images/ml.png" class="card-img-top" alt="Machine Learning Course">
+                <div class="card-body">
+                    <h5 class="card-title">Machine Learning Basics</h5>
+                    <p class="card-text">Master the fundamentals of Machine Learning with algorithms and practical use
+                        cases.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary" onclick="enrollCourse('Machine Learning Basics')">Enroll Now
+                        </button>
+                        <span class="price">Rs 1999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Card 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/static/images/Ai.jpg" class="card-img-top" alt="AI Course">
+                <div class="card-body">
+                    <h5 class="card-title">Artificial Intelligence Essentials</h5>
+                    <p class="card-text">Dive into AI concepts, tools, and practical examples. No prior knowledge
+                        required.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary" onclick="enrollCourse('Artificial Intelligence Essentials')">
+                            Enroll Now
+                        </button>
+                        <span class="price">Rs 2499</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% for course in courses %}
+<div class="course-card">
+    <h3>{{ course['name'] }}</h3>
+    <p>{{ course['description'] }}</p>
+    {% if course['_id'] in user_enrolled_courses %}
+    <form action="/start-learning/{{ course['_id'] }}" method="POST">
+        <button class="btn">Start Learning</button>
+    </form>
+    {% else %}
+    <form action="/enroll/{{ course['_id'] }}" method="POST">
+        <button class="btn">Enroll</button>
+    </form>
+    {% endif %}
+</div>
+{% endfor %}
+
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 Education Arena. Empowering Learning for Everyone.</p>
+    <a href="/contact" class="text-white">Contact Us</a> |
+    <a href="/about" class="text-white">About Us</a> |
+    <a href="https://www.linkedin.com/in/amitesh-jha-a2b932215" class="text-white">Let's Connect</a>
+</footer>
+
+<!-- JavaScript -->
+<script>
         function enrollCourse(courseName) {
             fetch('/enroll', {
                 method: 'POST',
@@ -118,6 +147,7 @@
                 }
             });
         }
-    </script>
+
+</script>
 </body>
 </html>

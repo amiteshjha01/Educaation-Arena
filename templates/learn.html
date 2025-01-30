@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .course-content {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    h2 {
+        color: #007BFF;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .progress-bar {
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .progress {
+        background-color: #007BFF;
+        height: 100%;
+        transition: width 0.5s ease;
+    }
+
+    .course-sections {
+        margin-top: 20px;
+    }
+
+    .section {
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .section h3 {
+        color: #007BFF;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .video-container {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    video {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    .quiz-prompt {
+        background-color: #e7f3fe;
+        border: 1px solid #b3d4fc;
+        color: #31708f;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="course-content">
+    <h2>{{ course.name }}</h2>
+    
+    <div class="progress-bar">
+        <div class="progress" style="width: {{ enrollment.progress }}%"></div>
+    </div>
+    
+    <div class="course-sections">
+        {% for section in course.sections %}
+            <div class="section">
+                <h3>{{ section.title }}</h3>
+                <div class="content">
+                    {{ section.content | safe }}
+                </div>
+                {% if section.video_url %}
+                    <div class="video-container">
+                        <video src="{{ section.video_url }}" controls></video>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if enrollment.progress >= 25 and not enrollment.quiz_completed %}
+        <div class="quiz-prompt">
+            <p>You've completed 25% of the course! Take the quiz to continue.</p>
+            <a href="/quiz" class="btn">Start Quiz</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

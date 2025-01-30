@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Progress Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Learning Dashboard</h1>
+            <div>
+                <span class="mr-4">Welcome, {{ student_name }}</span>
+                <a href="/logout" class="hover:text-gray-300">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 px-4">
+        <!-- Overall Progress Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Overall Progress</h2>
+            <div class="flex items-center">
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                    <div class="bg-blue-600 h-4 rounded-full" style="width: {{ overall_progress }}%"></div>
+                </div>
+                <span class="ml-4 font-semibold">{{ overall_progress }}%</span>
+            </div>
+        </div>
+
+        <!-- Course Progress Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for course in courses %}
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-2">{{ course.title }}</h3>
+                <div class="mb-4">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span>Progress</span>
+                        <span>{{ course.progress }}%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: {{ course.progress }}%"></div>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-600">
+                    <p>Completed: {{ course.completed_lessons }}/{{ course.total_lessons }} lessons</p>
+                    <p>Last accessed: {{ course.last_accessed }}</p>
+                </div>
+                <a href="/course/{{ course.id }}"
+                   class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Continue Learning
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Learning Analytics -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4">Weekly Activity</h2>
+                <canvas id="weeklyActivityChart"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4">Performance Overview</h2>
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #4CAF50; /* Green background */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #333; /* Dark background for navigation */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #4CAF50; /* Green background */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dashboard</h1>
+</header>
+
+<nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/report">Report</a>
+    <a href="/courses">Courses</a>
+    <a href="/profile">Profile</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Total Users</h2>
+        <p>Number of users registered: 1,250</p>
+    </div>
+    <div class="card">
+        <h2>Total Courses</h2>
+        <p>Number of courses available: 75</p>
+    </div>
+    <div class="card">
+        <h2>Active Enrollments</h2>
+        <p>Number of active enrollments: 300</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Your Company</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .answers {
+            margin-bottom: 20px;
+        }
+        .answers label {
+            display: block;
+            margin: 10px 0;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .message {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .message.good {
+            color: #4CAF50;
+        }
+        .message.average {
+            color: #FF9800;
+        }
+        .message.poor {
+            color: #F44336;
+        }
+        .question-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Python Programming Quiz</h1>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div id="question1" class="question-container">
+            <div class="question">
+                <label>1. What is the result of [3, 2, 1].sort()?</label>
+                <div class="answers">
+                    <label><input type="radio" name="q1" value="1"> [1, 2, 3]</label>
+                    <label><input type="radio" name="q1" value="0"> [3, 2, 1]</label>
+                    <label><input type="radio" name="q1" value="0"> [2, 3, 1]</label>
+                    <label><input type="radio" name="q1" value="0"> Error</label>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" class="submit-btn" onclick="nextQuestion(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="question-container">
+            <div class="question">
+                <label>2. Which method is used to reverse a list in Python?</label>
+                <div class="answers">
+                    <label><input type="radio" name="q2" value="1"> reverse()</label>
+                    <label><input type="radio" name="q2" value="0"> sort()</label>
+                    <label><input type="radio" name="q2" value="0"> reversed()</label>
+                    <label><input type="radio" name="q2" value="0"> flip()</label>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" class="submit-btn" onclick="nextQuestion(2)">Next</button>
+            </div>
+        </div>
+
+        <!-- Add more questions (Q3 to Q30) below in similar format as above. -->
+
+        <!-- After last question -->
+        <div id="resultContainer" style="display: none;">
+            <div class="message" id="resultMessage"></div>
+        </div>
+    </form>
+
+    <a href="/progress" class="btn btn-primary">Check Your Progress</a>
+</div>
+
+<script>
+    let currentQuestion = 1;
+    let totalQuestions = 30;
+    let score = 0;
+
+    function nextQuestion(questionNumber) {
+        const selectedOption = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+        if (selectedOption && selectedOption.value === "1") {
+            score++;
+        }
+
+        // Hide current question
+        document.getElementById(`question${questionNumber}`).style.display = "none";
+
+        // Show next question
+        if (currentQuestion < totalQuestions) {
+            currentQuestion++;
+            document.getElementById(`question${currentQuestion}`).style.display = "block";
+        } else {
+            calculateResults();
+        }
+    }
+
+    function calculateResults() {
+        // Hide all questions and show result
+        for (let i = 1; i <= totalQuestions; i++) {
+            document.getElementById(`question${i}`).style.display = "none";
+        }
+
+        document.getElementById("resultContainer").style.display = "block";
+
+        let resultMessage = document.getElementById("resultMessage");
+        if (score < 15) {
+            resultMessage.textContent = "You need to work hard. Keep practicing!";
+            resultMessage.className = "message poor";
+        } else if (score >= 15 && score < 22) {
+            resultMessage.textContent = "You are doing well! Keep up the good work!";
+            resultMessage.className = "message average";
+        } else if (score >= 22 && score <= 30) {
+            resultMessage.textContent = "You are great! Keep it up and best of luck for the next quizzes!";
+            resultMessage.className = "message good";
+        }
+    }
+
+    // Show the first question when the page loads
+    window.onload = function() {
+        document.getElementById(`question${currentQuestion}`).style.display = "block";
+    }
+</script>
+
+</body>
+</html>
